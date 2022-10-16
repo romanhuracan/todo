@@ -22,7 +22,7 @@
     <span class="ui gray label">Не выполнено</span>
     <a href="{% url 'update_todo_is_complete' todo_id=todo.id %}" class="ui primary basic label">Завершить</a>
     {% endif %}
-    <a href="" class="ui negative basic label">Удалить</a>
+    <a href="{% url 'delete_todo' todo_id=todo.id %}" class="ui negative basic label">Удалить</a>
 </div>
 {% endfor %}
 
