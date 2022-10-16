@@ -2,6 +2,16 @@
 
 {% block content %}
 
+{% if not todos %}
+<div class="ui segment">
+    <p>Увы, никаких задач еще нет</p>
+</div>
+{% else %}
+<div class="ui segment">
+    <p>Всего задач: {{ todos.count }}</p>
+</div>
+{% endif %}
+
 {% for todo in todos %}
 <div class="ui segment">
     <p class="ui big header">№{{ todo.id }} | {{ todo.title }}</p>
