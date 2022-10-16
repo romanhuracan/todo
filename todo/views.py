@@ -1,6 +1,8 @@
-from django.http import HttpResponse
 from django.shortcuts import render
+
+from todo.models import Todo
 
 
 def index(request):
-    return HttpResponse('Hello world')
+    todos = Todo.objects.all()
+    return render(request, template_name='todo/index.html', context={'todos': todos})
