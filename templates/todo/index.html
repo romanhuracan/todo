@@ -17,10 +17,10 @@
     <p class="ui big header">№{{ todo.id }} | {{ todo.title }}</p>
     {% if todo.is_complete %}
     <span class="ui green label">Выполнено</span>
-    <a href="" class="ui blue label">Возобновить</a>
+    <a href="{% url 'update_todo_is_complete' todo_id=todo.id %}" class="ui blue label">Возобновить</a>
     {% else %}
     <span class="ui gray label">Не выполнено</span>
-    <a href="" class="ui primary basic label">Завершить</a>
+    <a href="{% url 'update_todo_is_complete' todo_id=todo.id %}" class="ui primary basic label">Завершить</a>
     {% endif %}
     <a href="" class="ui negative basic label">Удалить</a>
 </div>
